@@ -17,9 +17,9 @@ missing.
 ## Analysis
 
 The exercise contains three basic steps. 
-1. Get HTML source given url
-1. Determine tag frequence therein
-1. Highlight tags upon tag selection
+- Get HTML source given url
+- Determine tag frequence therein
+- Highlight tags upon tag selection
 
 A http client library is used for the first. There is more than one way to do
 tag counting and tag highlighting. Some analysis follows.
