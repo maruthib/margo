@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+  <constant name="struts.devMode" value="false" />
+  <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+  <constant name="struts.convention.exclude.parentClassLoader" value="false" />
+  <constant name="struts.enable.SlashesInActionNames" value="true"/>
+  <constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+  <constant name="struts.patternMatcher" value="namedVariable"/>
+  <constant name="struts.multipart.maxSize" value="10000000" />
+  <constant name="struts.multipart.saveDir" value="/tmp" />
+
+  <package name="default" namespace="/" extends="struts-default">
+
+    <interceptors>
+      <interceptor name="sessionInterceptor"
+        class="com.acme.interceptor.SessionInterceptor"></interceptor>
+    
+      <interceptor-stack name="defaultInterceptorStack">
+        <interceptor-ref name="exception">
+          <param name="logEnabled">true</param>
+          <param name="logLevel">ERROR</param>
+        </interceptor-ref>
+        <interceptor-ref name="servletConfig" />
+        <interceptor-ref name="params" />
+        <interceptor-ref name="sessionInterceptor" />        
+        <interceptor-ref name="prepare" />
+        <interceptor-ref name="chain" />
+        <interceptor-ref name="modelDriven" />
+        <interceptor-ref name="fileUpload" />
+        <interceptor-ref name="staticParams" />
+        <interceptor-ref name="params" />
+        <interceptor-ref name="conversionError" />
+        <interceptor-ref name="validation" />
+        <interceptor-ref name="workflow" />
+      </interceptor-stack>
+
+    </interceptors>
+
+    <default-interceptor-ref name="defaultInterceptorStack" />
+
+    <default-action-ref name="index"/>
+
+    <global-results>
+      <result name="badrequest" type="httpheader">
+        <param name="status">400</param>
+        <param name="contentType">application/json</param>
+      </result>
+      <result name="internalFailure" type="httpheader">
+        <param name="status">500</param>
+        <param name="contentType">application/json</param>
+      </result>
+      <result name="stream" type="stream">
+        <param name="contentType">application/json</param>
+        <param name="inputName">inputStream</param>
+      </result>
+    </global-results>
+        
+    <action name="index">
+       <result name="success">/index.jsp</result>        
+    </action>
+
+    <action name="pagesource" class="com.acme.servlet.PageSource" method="pageSource" />
+
+    <action name="jsrequired" class="com.acme.servlet.PageSource" method="jsrequired">
+      <result name="jsreq">/jsreq.jsp</result>
+    </action>   
+
+  </package>
+    
+    <!-- Add addition packages and configuration here. -->
+</struts>

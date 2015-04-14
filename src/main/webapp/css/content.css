@@ -1,0 +1,168 @@
+@font-face {
+  font-family: BebasNeue;
+  src: url("/css/BebasNeue.otf") format("opentype");
+}
+
+#ctr-one-col-area {
+  margin-top: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: center;
+  min-width: 600px;
+}
+
+.alert-wrap {
+  z-index: 2000;
+  cursor: default;
+  text-align: center;
+  width: 100%;
+}
+
+.alert-wrap-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.alert-prompt {
+  margin-left: 5px;
+  cursor: pointer;
+  text-decoration: underline;  
+}
+
+.alert-hide {
+  display: none;
+}
+
+.alert-show {
+  tab-index: 0;
+}
+
+ .alert {
+  text-shadow: none;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  padding-bottom: 10px;
+}
+ 
+ .alert-info {
+  background-color: #4C5256;
+  border-color: #4C5256;
+  color: #FFFFFA;
+ }
+ 
+ .alert-info > .close, .alert-info > .alert-prompt {
+   color: #FFFFFA;
+ }
+ 
+.alert-info > .close {
+  opacity: 0.6;  
+}
+ 
+.alert-warning {
+  color: #967234;
+  background-color: #EBE1B1;
+}
+
+.btn {
+  text-shadow: none;
+  margin-bottom: 10px;
+  margin-left: -6px;
+  background-image: none;  
+  background-color: rgb(37, 157, 184);
+  color: white;
+}
+
+.btn-sml {
+  width: 60px;
+}
+
+.btn:hover {
+  background-color: #3e769b;
+  color: white;
+}
+
+.vertspace20p {
+  clear: both;
+  height: 20px;
+}
+
+.horspace10p {
+  margin-left:10px;
+}
+
+.horspace20p {
+  margin-left:20px;
+}
+
+.horspacer10 {
+  margin-right: 10px;
+}
+
+.horspacer20 {
+  margin-right: 20px;
+}
+
+.pos-lefty {
+  float: left;
+}
+
+.shp-rnd-3 {
+  border-radius: 3px;
+}
+
+.shp-bdr-left-none {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.siz-500p {
+  width: 500px;
+}
+
+.siz-mrgb-10p {
+  margin-bottom: 10px;
+}
+
+.siz-td-break-all {
+  word-break: break-all;
+}
+
+.skn-blue {
+  background-color: rgb(37, 157, 184);
+}
+
+.skn-yellow {
+  background-color: rgb(234, 168, 34);
+}
+
+.skn-green {
+  background-color: rgb(56, 186, 145);
+}
+
+.skn-gray {
+  background-color: gray;
+}
+
+.skn-font-white {
+  color: white;
+}
+
+.bhv-click {
+  cursor: pointer;
+}
+
+#pgs-container {
+  text-align: left;
+  font-family: monospace;
+  font-size: 80%;
+  color: gray;  
+}
+
+/* 
+ * To prevent centering jumps when transition between content that requires and does not require
+ * vertical scrollbar
+ */
+html {
+  overflow-y: scroll;
+}
