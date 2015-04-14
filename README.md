@@ -33,9 +33,9 @@ is chrome "inspect element" of a "view page source".
 
 An HTML parser can be relied upon to provide an accurate tag count. For example,
 tag counts can be built by traversing a DOM for the downloaded HTML source.
-However, this DOM cannot help with generating the display HTML. So parsing the
-downloaded HTML source and/or search and replace of the display HTML is
-required. 
+However, this DOM cannot help with generating the display HTML wherein only
+tags are highlighted. So parsing the downloaded HTML source and/or search
+and replace of the display HTML is required. 
 
 Highlight span wrapping can be done either on-demand when the user selects a tag,
 or all tags can be pre-wrapped. The later is better for client performance and
@@ -43,7 +43,7 @@ hence UX.  Multiple string search and replace calls, string mutations therein
 can be avoided. Using jquery to find the appropriate pre-wrapped spans is
 assumed to be faster on average, and this is particularly true when the HTML
 source is large. Hence, the **server generates the final display HTML** and the
-**client only turns highlighting on/off. **
+**client only turns highlighting on/off.**
 
 Regex based, or custom parsing of HTML as opposed to using a true HTML parser
 is wrong in general, but may work for some use cases. Ironically, this also 
