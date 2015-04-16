@@ -77,11 +77,13 @@ ds.js:getPageSourceTags, tags.js, templates/</code>
 - Tags inside scripts, comments etc should be discounted
 - <code>&lt;!DOCTYPE&gt; &lt;!-- --&gt;</code> could be detected
 - Detected tags are a superset of valid HTML tags
+- content.css is a hack and does not follow CSS design guidelines
 - Unit/Integration test for frontend
 - Integration testing for backend
 - Production packaging (minification etc)
 - Site discovery. It is assumed user knows what this app is for.
 - Support for time out on get request to target server
+- All possible error conditions are not investigated or coded for
 - Wait indication, such as a spinner, is not provided.
 - HTTP client response body streaming, as opposed to
 <code>String responsebody;</code>
