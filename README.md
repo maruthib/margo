@@ -82,7 +82,7 @@ ds.js:getPageSourceTags, tags.js, templates/</code>
 - Integration testing for backend
 - Production packaging (minification etc)
 - Site discovery. It is assumed user knows what this app is for.
-- Support for time out on get request to target server
+- Support for timeout on get request to target server
 - All possible error conditions are not investigated or coded for
 - Wait indication, such as a spinner, is not provided.
 - HTTP client response body streaming, as opposed to
